@@ -1,0 +1,97 @@
+/* --- Reset básico --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Cores temáticas Magic: The Gathering --- */
+:root {
+  --preto: #0c0c0c;
+  --vermelho: #8B0000;
+  --dourado: #D4AF37;
+  --cinza: #1a1a1a;
+  --texto: #f5f5f5;
+}
+
+/* --- Corpo --- */
+body {
+  background: linear-gradient(180deg, var(--preto) 0%, var(--cinza) 100%);
+  color: var(--texto);
+  font-family: "Cinzel", serif;
+  min-height: 100vh;
+}
+
+/* --- Cabeçalho --- */
+.header {
+  background-color: var(--preto);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--dourado);
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: var(--dourado);
+  text-shadow: 0 0 10px var(--vermelho);
+}
+
+/* --- Menu --- */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--dourado);
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-list li a:hover {
+  color: var(--vermelho);
+  transform: scale(1.05);
+}
+
+/* --- Botão menu mobile --- */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--dourado);
+}
+
+/* --- Conteúdo principal --- */
+.main {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.2rem;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: var(--cinza);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid var(--dourado);
+    padding: 1rem 0;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
